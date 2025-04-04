@@ -1,3 +1,16 @@
+/*Google fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200..700&display=swap');
+.oswald-uniquifier {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with a valid font-weight value */
+    font-style: normal;
+  }
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
 /*asterisk wildcard selector to override default styles added by the browser */
 *{
     margin: 0;
@@ -11,6 +24,7 @@ body {
     flex-direction: column;
     /*Generic project styles*/
     color: #3a3a3a;
+    font-family: 'lato', sans-serif;
 }
 header {
     background-color:lightcoral; 
