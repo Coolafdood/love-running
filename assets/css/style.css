@@ -1,102 +1,139 @@
-/*Google fonts import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200..700&display=swap');
-.oswald-uniquifier {
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400; /* Replace with a valid font-weight value */
-    font-style: normal;
-  }
-  .lato-light {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-/*asterisk wildcard selector to override default styles added by the browser */
-*{
-    margin: 0;
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-/*general styles for the body*/
+
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /*Generic project styles*/
+    /* Generic project styles */
     color: #3a3a3a;
-    font-family: 'lato', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
+
+/* Header */
 header {
-    background-color: #fff; 
- padding: 0 1 rem;
- position: fixed;
- z-index: index 99; 
- width: 100%;
- box-shadow: 0 2px 2px #3a3a3a;
+    background-color: #ffffff;
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0 2px 2px #3a3a3a;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-  
-    
 }
-header a{ text-decoration: none;
-    color: inherit;
 
+header a {
+    text-decoration: none;
+    color: inherit;
 }
+
 h1 {
     font-family: 'Oswald', sans-serif;
-text-transform: uppercase;
-letter-spacing: 2px;
-color: #252525;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
 }
-/*Navbar with dropdown toggle*/
+
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+#menu > li {
+    margin-bottom: 1em;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
-background-color: #ffff;
-width: 100%;
-align-items: left;
-padding: 1rem 0;
-box-shadow: 0 2px 2px #3a3a3a;
-display: none;
-top: 100%;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+    top: 100%;
 }
-/*nav-toggle*/
-#nav-toggle:checked ~ nav { display: block; }
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: block;
+}
+
 #nav-toggle {
     display: none;
 }
+
 .nav-toggle-label {
     font-size: 2rem;
 }
-main {background-color: lightblue;
-    /*make main element take up any surplus space to push footer down*/
+
+/* Main content */
+main {
+    background-color: lightblue;
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
+/* Footer */
 footer {
     background-color: orange;
-    
 }
-/*media query: tablets and larger (780p and up)*/
+
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
-/*header*/
-    
-nav {
-        display:block;
+    /* Header */
+    nav {
+        display: block;
         position: relative;
         box-shadow: none;
         width: fit-content;
-        padding-right: 1rem;;
+        padding-right: 1rem;
     }
+
     #menu {
         display: flex;
-        
     }
-        #menu > li {
-            padding-left:1rem ;
-        }
+
+    #menu > li {
+        padding-left: 1rem;
     }
+
     .nav-toggle-label {
         display: none;
     }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a;
+    }
+}
